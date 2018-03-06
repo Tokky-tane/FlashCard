@@ -19,9 +19,22 @@ namespace FlashCard.Page
 		{
 			InitializeComponent ();
             words = GetList<WordCollection, Word>("FlashCard.Data.words.xml");
+
+            var fields = words.Select(x => x.Name).Distinct();
+            foreach (var field in fields)
+            {
+                var button = new Button { Text = field };
+                button.Clicked += OnSelectButtonClicked;
+            }
+
 		}
 
-        private void OnAllButtonClicked(object sender,EventArgs e)
+        private void OnAllButtonClicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void OnSelectButtonClicked(object sender, EventArgs e)
         {
 
         }

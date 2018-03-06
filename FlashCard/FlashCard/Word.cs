@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace FlashCard2
+namespace FlashCard
 {
     public class Word
     {

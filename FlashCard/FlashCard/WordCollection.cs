@@ -6,9 +6,9 @@ using System.Xml.Serialization;
 namespace FlashCard
 {
     [XmlRoot("Words")]
-    public class WordCollection
+    public class WordCollection : IChildren<Word>
     {
         [XmlElement(Type = typeof(Word), ElementName = "Word")]
-        public List<Word> Words { get; set; }
+        public List<Word> List { get; set; }
     }
 }

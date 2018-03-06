@@ -20,11 +20,13 @@ namespace FlashCard.Page
 			InitializeComponent ();
             words = GetList<WordCollection, Word>("FlashCard.Data.words.xml");
 
-            var fields = words.Select(x => x.Name).Distinct();
+            var fields = words.Select(x => x.Field).Distinct().ToList();
+
             foreach (var field in fields)
             {
                 var button = new Button { Text = field };
                 button.Clicked += OnSelectButtonClicked;
+                selectedButtonStack.Children.Add(button);
             }
 
 		}

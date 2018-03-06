@@ -9,7 +9,7 @@
                    HorizontalOptions="CenterAndExpand"/>
 
             <Button Text="Start"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>

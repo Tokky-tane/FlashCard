@@ -16,5 +16,10 @@ namespace FlashCard.Page
 		{
 			InitializeComponent ();
 		}
+
+        private void OnAllButtonClicked(object sender,EventArgs e)
+        {
+
+        }
 	}
 }

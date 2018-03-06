@@ -10,7 +10,8 @@
 
             <Button Text="Start"
                     VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="Center"/>
+                    HorizontalOptions="Center"
+                    Clicked="OnStartButtonClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

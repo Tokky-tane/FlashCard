@@ -16,5 +16,10 @@ namespace FlashCard.Page
 		{
 			InitializeComponent ();
 		}
+
+        private void OnStartButtonClicked(object sender,EventArgs e)
+        {
+            Navigation.PushModalAsync(new NavigationPage(new Page.FieldSelectPage()));
+        }
 	}
 }

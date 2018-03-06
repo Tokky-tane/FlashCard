@@ -13,7 +13,7 @@ namespace FlashCard
 		{
 			InitializeComponent();
 
-			MainPage = new FlashCard.MainPage();
+			MainPage = new FlashCard.Page.StartPage();
 		}
 
 		protected override void OnStart ()

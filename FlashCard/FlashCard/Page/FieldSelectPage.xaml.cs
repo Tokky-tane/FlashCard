@@ -14,13 +14,13 @@ namespace FlashCard.Page
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FieldSelectPage : ContentPage
 	{
-        List<Word> words;
+        IEnumerable<Word> words;
 		public FieldSelectPage ()
 		{
 			InitializeComponent ();
             words = GetList<WordCollection, Word>("FlashCard.Data.words.xml");
 
-            var fields = words.Select(x => x.Field).Distinct().ToList();
+            var fields = words.Select(x => x.Field).Distinct();
 
             foreach (var field in fields)
             {
@@ -33,12 +33,14 @@ namespace FlashCard.Page
 
         private void OnAllButtonClicked(object sender, EventArgs e)
         {
-            
+            Navigation.PushAsync(new NumberSelectPage(words));
         }
 
         private void OnSelectButtonClicked(object sender, EventArgs e)
         {
-
+            var field = ((Button)sender).Text;
+            var selected = words.Where(x => x.Field == field);
+            Navigation.PushAsync(new NumberSelectPage(selected));
         }
 
         List<TChild> GetList<TChildren, TChild>(string resourseID)

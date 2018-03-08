@@ -12,7 +12,7 @@ namespace FlashCard.Page
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class QuestionPage : ContentPage
 	{
-		public QuestionPage ()
+		public QuestionPage (IEnumerable<Word> words)
 		{
 			InitializeComponent ();
 		}

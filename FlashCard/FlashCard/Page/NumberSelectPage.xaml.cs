@@ -36,12 +36,15 @@ namespace FlashCard.Page
 
         private void OnSelectedButtonClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var button = (Button)sender;
+            var selectedNum = int.Parse(button.StyleId);
+            var selectedWords = words.Take(selectedNum);
+            Navigation.PushModalAsync(new QuestionPage(selectedWords));
         }
 
         private void OnAllButtonClicked(object sender,EventArgs e)
         {
-            throw new NotImplementedException();
+            Navigation.PushModalAsync(new QuestionPage(words));
         }
     }
 }

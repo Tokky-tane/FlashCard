@@ -4,17 +4,15 @@
              x:Class="FlashCard.Page.FieldSelectPage"
              Title="分野を選択">
     <ContentPage.Content>
-        <StackLayout>
-            <ScrollView>
-                <StackLayout>
-                    <Button Text="全て"
-                            Clicked="OnAllButtonClicked"/>
+        <ScrollView>
+            <StackLayout>
+                <Button Text="全て"
+                        Clicked="OnAllButtonClicked"/>
+                
+                <StackLayout x:Name="selectedButtonStack">
 
-                    <StackLayout x:Name="selectedButtonStack">
-                        
-                    </StackLayout>
                 </StackLayout>
-            </ScrollView>
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

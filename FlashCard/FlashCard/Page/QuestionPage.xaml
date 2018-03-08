@@ -4,9 +4,30 @@
              x:Class="FlashCard.Page.QuestionPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnPageTapped"/>
+            </StackLayout.GestureRecognizers>
+
+            <Label x:Name="nameLabel"
+                   Text="NAME"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+            
+            <Label x:Name="meamLabel"
+                   Text="MEAN"
+                   VerticalOptions="StartAndExpand"
+                   HorizontalOptions="Center"/>
+            
+            <StackLayout Orientation="Horizontal"
+                         Opacity="0"
+                         x:Name="buttonStack">
+                <Button Text="×"
+                        Clicked="OnIncorrectButtonClicked"
+                        HorizontalOptions="FillAndExpand"/>
+                <Button Text="○"
+                        Clicked="OnIncorrectButtonClicked"
+                        HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -16,5 +16,17 @@ namespace FlashCard.Page
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void OnPageTapped(object sender ,EventArgs e)
+        {
+        }
+
+        private void OnIncorrectButtonClicked(object sender, EventArgs e)
+        {
+        }
+
+        private void OnCorrectButtonClicked(object sender, EventArgs e)
+        {
+        }
+    }
 }

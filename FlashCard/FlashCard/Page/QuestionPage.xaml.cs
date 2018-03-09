@@ -9,24 +9,54 @@ using Xamarin.Forms.Xaml;
 
 namespace FlashCard.Page
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class QuestionPage : ContentPage
-	{
-		public QuestionPage (IEnumerable<Word> words)
-		{
-			InitializeComponent ();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class QuestionPage : ContentPage
+    {
+        bool isQuestionMode = true;
+        Dictionary<string, bool> pairs = new Dictionary<string, bool>();
+        List<Word> words;
 
-        private void OnPageTapped(object sender ,EventArgs e)
+        public QuestionPage(IEnumerable<Word> _words)
         {
+            InitializeComponent();
+            
+            words = _words.ToList();
+            SetWord(words.First());
         }
 
-        private void OnIncorrectButtonClicked(object sender, EventArgs e)
+        private void OnPageTapped(object sender, EventArgs e)
         {
+            if (isQuestionMode)
+            {
+                swich.IsToggled = false;
+                meamLabel.Opacity = 1;
+                swichStack.Opacity = 1;
+                isQuestionMode = false;
+            }
+            else
+            {
+                pairs[nameLabel.Text] = swich.IsToggled;
+                
+                meamLabel.Opacity = 0;
+                swichStack.Opacity = 0;
+                if (words.Count()!=1)
+                {
+                    words.RemoveAt(0);
+                    SetWord(words.First());
+                }
+                else
+                {
+                    
+                }
+                isQuestionMode = true;
+            }
         }
 
-        private void OnCorrectButtonClicked(object sender, EventArgs e)
+
+        void SetWord(Word word)
         {
+            nameLabel.Text = word.Name;
+            meamLabel.Text = word.Mean;
         }
     }
 }

@@ -4,30 +4,37 @@
              x:Class="FlashCard.Page.QuestionPage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnPageTapped"/>
-            </StackLayout.GestureRecognizers>
-
-            <Label x:Name="nameLabel"
-                   Text="NAME"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="Center"/>
-            
-            <Label x:Name="meamLabel"
-                   Text="MEAN"
-                   VerticalOptions="StartAndExpand"
-                   HorizontalOptions="Center"/>
-            
-            <StackLayout Orientation="Horizontal"
-                         Opacity="0"
-                         x:Name="buttonStack">
-                <Button Text="×"
-                        Clicked="OnIncorrectButtonClicked"
-                        HorizontalOptions="FillAndExpand"/>
-                <Button Text="○"
-                        Clicked="OnIncorrectButtonClicked"
-                        HorizontalOptions="FillAndExpand"/>
+            <StackLayout x:Name="swichStack"
+                         Orientation="Horizontal"
+                         HorizontalOptions="EndAndExpand"
+                         Margin="5"
+                         Opacity="0">
+                
+                <Label Text="覚えた！"
+                       VerticalOptions="Center"/>
+                <Switch VerticalOptions="Center"
+                        
+                        x:Name="swich"/>
             </StackLayout>
+
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPageTapped"/>
+                </StackLayout.GestureRecognizers>
+
+                <Label x:Name="nameLabel"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Center"/>
+
+                <Label x:Name="meamLabel"
+                       Margin="20"
+                       Opacity="0"
+                       VerticalOptions="StartAndExpand"                 
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"/>
+           </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

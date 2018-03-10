@@ -35,20 +35,20 @@ namespace FlashCard.Page
             }
             else
             {
-                pairs[nameLabel.Text] = swich.IsToggled;
-                
-                meamLabel.Opacity = 0;
-                swichStack.Opacity = 0;
-                if (words.Count()!=1)
+                pairs.Add(words.First().Name, swich.IsToggled);
+                isQuestionMode = true;
+                if (words.Count != 1)
                 {
                     words.RemoveAt(0);
                     SetWord(words.First());
+                    meamLabel.Opacity = 0;
+                    swichStack.Opacity = 0;
+                    isQuestionMode = true;
                 }
                 else
                 {
-                    
+                    Navigation.PushModalAsync(new ResultPage(pairs));
                 }
-                isQuestionMode = true;
             }
         }
 

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlashCard.Page.ResultPage"
+             Padding="5">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="結果"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="Center">
+                <Label x:Name="correctLabel"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       VerticalOptions="Center"/>
+                
+                <Label Text="/"
+                       VerticalOptions="End"/>
+                
+                <Label x:Name="allLabel"
+                       VerticalOptions="End"/>
+            </StackLayout>
+
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="incorrctStack">
+                    
+                </StackLayout>
+            </ScrollView>
+
+            <StackLayout Orientation="Horizontal"
+                         Padding="5">
+                <Button Text="復習"
+                        HorizontalOptions="FillAndExpand"/>
+                <Button Text="スタートに戻る"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="OnBackTitleButtonClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
